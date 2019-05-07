@@ -5,11 +5,13 @@
 #include "Account.h"
 #include "AccountArray.h"
 
+typedef Account * ACCOUNT_PTR;
+
 class AccountHandler {
 private:
 	//계좌를 관리할 배열
 	//Account * accArr[NumOfUser];
-	AccountArray accArr;
+	AccountArray<ACCOUNT_PTR> accArr;
 	//개설된 계좌 수
 	int accNum;
 

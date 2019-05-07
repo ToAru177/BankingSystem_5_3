@@ -4,6 +4,7 @@
 #include "Account.h"
 #include "MyString.h"
 #include "Exception.h"
+#include "AccountArray.cpp"
 
 
 const int NAME_LEN = 20;

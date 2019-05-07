@@ -5,11 +5,11 @@
 
 #define NumOfUser	100
 
-typedef Account * ACCOUNT_PTR;
 
+template <typename T>
 class AccountArray {
 private:
-	ACCOUNT_PTR *accArr;	// 개설 계좌 리스트(포인터 배열)
+	T* accArr;	// 개설 계좌 리스트(포인터 배열)
 	int arrlen;				// 배열의 요소 수
 	
 
@@ -21,10 +21,10 @@ public:
 	AccountArray(int len = NumOfUser);
 	
 	// [] 연산자 오버로드
-	ACCOUNT_PTR& operator[](int idx);
+	T& operator[](int idx);
 
 	// [] 연산자 오버로드
-	ACCOUNT_PTR operator[](int idx) const;
+	T operator[](int idx) const;
 
 	// 배열 길이 반환
 	int GetArrLen() const;

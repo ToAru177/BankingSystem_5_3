@@ -2,12 +2,14 @@
 #include "Account.h"
 #include "Exception.h"
 
-AccountArray::AccountArray(int len) {
-	accArr = new ACCOUNT_PTR[len];
+template <typename T>
+AccountArray<T>::AccountArray(int len) {
+	accArr = new T[len];
 	arrlen = len;
 }
 
-ACCOUNT_PTR& AccountArray::operator[](int idx) {
+template <typename T>
+T& AccountArray<T>::operator[](int idx) {
 	if (idx < 0 || idx >= arrlen) {
 		cout << "배열의 범위를 벗어났습니다." << endl;
 		exit(1);
@@ -16,7 +18,8 @@ ACCOUNT_PTR& AccountArray::operator[](int idx) {
 	return accArr[idx];
 }
 
-ACCOUNT_PTR AccountArray::operator[](int idx) const {
+template <typename T>
+T AccountArray<T>::operator[](int idx) const {
 	if (idx < 0 || idx >= arrlen) {
 		cout << "배열의 범위를 벗어났습니다." << endl;
 		exit(1);
@@ -25,10 +28,12 @@ ACCOUNT_PTR AccountArray::operator[](int idx) const {
 	return accArr[idx];
 }
 
-int AccountArray::GetArrLen() const {
+template <typename T>
+int AccountArray<T>::GetArrLen() const {
 	return arrlen;
 }
 
-AccountArray::~AccountArray() {
+template <typename T>
+AccountArray<T>::~AccountArray() {
 	delete[]accArr;
 }
