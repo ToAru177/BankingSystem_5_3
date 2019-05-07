@@ -1,5 +1,6 @@
 #include "AccountArray.h"
 #include "Account.h"
+#include "Exception.h"
 
 AccountArray::AccountArray(int len) {
 	accArr = new ACCOUNT_PTR[len];
